@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: #000000; 
+    color: #ffffff; 
+}
+
+header {
+    margin-top: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 9%;
+    background-color: transparent;
+    filter: drop-shadow(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 3rem;
+    color: #1e90ff;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+    color: #63b3ff;
+}
+
+nav a {
+    font-size: 1.8rem;
+    color: #ffffff;
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover,
+nav a.active {
+    color: #1e90ff;
+    border-bottom: 3px solid #1e90ff;
+}
+
+@media(max-width:995px){
+    nav {
+        position: absolute;
+        display: none;
+        top: 0;
+        right: 0;
+        width: 40%;
+        border-left: 3px solid #1e90ff;
+        border-bottom: 3px solid #1e90ff;
+        border-bottom-left-radius: 2rem;
+        padding: 1rem solid;
+        background-color: #111111;
+        border-top: 0.1rem solid rgba(255,255,255,0.1);
+    }
+
+    nav.active {
+        display: block;
+    }
+
+    nav a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+
+    nav a:hover,
+    nav a.active {
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border-bottom: 0.5rem solid #1e90ff;
+    }
+}
+
+section {
+    min-height: 100vh;
+    padding: 5rem 9% 5rem;
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    background-color: #000000;
+}
+
+.home .home-content h1 {
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #ffffff;
+}
+
+span {
+    color: #1e90ff; 
+}
+
+.home-content h3 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    color: #e6e6e6;
+}
+
+.home-content p {
+    font-size: 1.6rem;
+    color: #cccccc;
+}
+
+.home-img {
+    border-radius: 50%;
+}
+
+.home-img img {
+    position: relative;
+    width: 32vw;
+    border-radius: 50%;
+    box-shadow: 0 0 25px rgba(30,144,255,0.6);
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+
+.home-img img:hover {
+    transform: scale(1.03);
+}
+
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: transparent;
+    border: 0.2rem solid #1e90ff;
+    font-size: 2rem;
+    border-radius: 50%;
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease;
+    color: #1e90ff;
+}
+
+.social-icons a:hover {
+    color: #000000;
+    transform: scale(1.3) translateY(-5px);
+    background-color: #1e90ff;
+    box-shadow: 0 0 25px #1e90ff;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background-color: #000000;
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: #1e90ff;
+    letter-spacing: 0.3rem;
+    font-weight: 600;
+    border: 2px solid #1e90ff;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: scale(1.03);
+    background-color: #1e90ff;
+    color: #000000;
+    box-shadow: 0 0 25px #1e90ff;
+}
+
+.typing-text {
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+    color: #ffffff;
+}
+
+.typing-text span {
+    position: relative;
+}
+
+.typing-text span::before {
+    content: "Software Developer";
+    color: #1e90ff;
+    animation: words 20s infinite;
+}
+
+.typing-text span::after {
+    content: "";
+    background-color: #000000;
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid #000000;
+    right: -8;
+    animation: cursor 0.6s infinite;
+}
+
+@keyframes cursor {
+    to {
+        border-left: 3px solid #1e90ff;
+    }
+}
+
+@keyframes words {
+    0%, 20% {
+        content: "Human";
+    }
+    21%, 40% {
+        content: "Student";
+    }
+    41%, 60% {
+        content: "Designer";
+    }
+    61%, 80% {
+        content: "Web Developer";
+    }
+    81%, 100% {
+        content: "programmer";
+    }
+}
+
+@media (max-width: 1000px) {
+    .home {
+        gap: 4rem;
+    }
+}
+
+@media(max-width:995px){
+    .home {
+        flex-direction: column;
+        margin: 5rem 4rem;
+    }
+
+    .home .home-content h3 {
+        font-size: 2.5rem;
+    }
+
+    .home-content h1 {
+        font-size: 5rem;
+    }
+
+    .home-img img {
+        width: 70vw;
+        margin-top: 4rem;
+    }
+}
+
+.about-content {
+    text-align: center;
+    margin-top: 5rem;
+}
+
+.about-content h2 {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    color: #1e90ff;
+}
+
+.about-content p {
+    font-size: 1.6rem;
+    color: #cccccc;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+.about-content img {
+    width: 200px;
+    border-radius: 50%;
+    margin-top: 2rem;
+    box-shadow: 0 0 25px rgba(30,144,255,0.6);
+    transition: 0.3s ease;
+}
+
+.about-content img:hover {
+    transform: scale(1.05);
+}
+
+.projects {
+    text-align: center;
+    margin-top: 5rem;
+}
+
+.projects h2 {
+    font-size: 3.5rem;
+    margin-bottom: 3rem;
+    color: #1e90ff;
+}
+
+.project-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.project-cards img {
+    width: 280px;
+    height: 180px;
+    border-radius: 1rem;
+    object-fit: cover;
+    box-shadow: 0 0 20px rgba(30,144,255,0.4);
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.project-cards img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #1e90ff;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  
+    align-items: center;      
+    text-align: center;
+    min-height: 100vh;        
+}
+
+.contact h2 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    color: #1e90ff;
+}
+
+.contact p {
+    font-size: 1.8rem;
+    color: #cccccc;
+}
